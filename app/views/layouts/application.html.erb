@@ -17,20 +17,49 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Home</a>
+      <%= link_to "Home", index_path, class: "navbar-brand" %>
     </div>
 
-<<<<<<< HEAD
+
 <div class="container">
   <div class="pull-right">
     <% if user_signed_in? %>
-      <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-primary" %> 
+    <ul class="nav navbar-nav navbar-right">
+        
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome *username*<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">View Profile</a></li>
+            <li><%= link_to "Edit Profile", edit_user_registration_path%></li>
+            <li><a href="#">View My Posts</a></li>
+            
+          </ul>
+        </li>
+        <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+      
+      <% else %>
+       <!--             NEW LOG IN FORM        -->
 
-      <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {class: "navbar-form navbar-left form-inline"}) do |f| %>
+
+  <div class="form-group">
+    <%= f.email_field :email, autofocus: true, placeholder: "Enter Email", class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.password_field :password, autocomplete: "off", placeholder: "Password", class: "form-control" %>
+  </div>
+  <%= f.submit "Log in", class: "btn btn-primary" %>
+<!-- <div class="field">
+      <%#= f.check_box :remember_me %>
+      <%#= f.label :remember_me %>
+    </div>  --> 
+  <% end %>
+
+</ul> 
     <% end %>
   </div>
 
-=======
+
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
@@ -39,26 +68,14 @@
         
       </ul>
      
-      <ul class="nav navbar-nav navbar-right">
-        
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome *username*<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">View Profile</a></li>
-            <li><a href="#">Edit Profile</a></li>
-            <li><a href="#">View My Posts</a></li>
-            
-          </ul>
-        </li>
-        <li><a href="#">Sign Out</a></li>
-      </ul>
+      
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 <div class= "container">
 	<%= yield %>
 </div>
->>>>>>> treddit
+
 
 </body>
 </html>
