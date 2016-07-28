@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  resources :comments
+  get 'welcome/index'
+
+  resources :comments
+
+  get 'comments' => 'comments#show'
+  root 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
