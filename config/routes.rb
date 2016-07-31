@@ -8,8 +8,10 @@ Rails.application.routes.draw do
 
   resources :comments
 
+  get 'sign_up' => 'users#new'
   get 'comments' => 'comments#show'
   get 'index' => 'welcome#index'
+  get 'show_user' => 'users#show'
   root 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
