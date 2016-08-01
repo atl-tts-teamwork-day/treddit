@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   get 'comments' => 'comments#show'
   get 'index' => 'welcome#index'
   get 'show_user' => 'users#show'
+  get 'search' => 'posts#search'
+  get 'search' => 'posts#_search_result'
+  get 'show_post' => 'posts#show'
   root 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
