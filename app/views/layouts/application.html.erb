@@ -17,26 +17,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Home</a>
+      <h1><%= link_to "Treddit", root_path %></h1>
     </div>
 
-<<<<<<< HEAD
-<div class="container">
-  <div class="pull-right">
-    <% if user_signed_in? %>
-      <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-primary" %> 
-
-      <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
-    <% end %>
-  </div>
-
-<%= yield %>
-=======
-    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-       <!--  <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li> -->
+      	<% if user_signed_in? %>
         
       </ul>
      
@@ -46,20 +32,21 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome *username*<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">View Profile</a></li>
-            <li><a href="#">Edit Profile</a></li>
+            <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
             <li><a href="#">View My Posts</a></li>
             
           </ul>
         </li>
-        <li><a href="#">Sign Out</a></li>
+        <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
       </ul>
+      <% end %>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 <div class= "container">
 	<%= yield %>
 </div>
->>>>>>> treddit
+
 
 </body>
 </html>
