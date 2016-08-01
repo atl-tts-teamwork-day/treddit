@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+.lip {
+	width: 30%;
+}
+
+.pita {
+	margin-top: 8px;
+	margin-left: 20px;
+}

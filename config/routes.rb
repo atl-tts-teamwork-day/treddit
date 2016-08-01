@@ -1,9 +1,21 @@
 Rails.application.routes.draw do
 
+
   resources :posts
 
   devise_for :users
   resources :users
+
+  resources :comments
+
+  get 'sign_up' => 'users#new'
+  get 'comments' => 'comments#show'
+  get 'index' => 'welcome#index'
+  get 'show_user' => 'users#show'
+  get 'search' => 'posts#search'
+  get 'search' => 'posts#_search_result'
+  get 'show_post' => 'posts#show'
+  root 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

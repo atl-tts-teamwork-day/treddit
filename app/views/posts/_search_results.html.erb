@@ -1,0 +1,13 @@
+<!-- SEARCH FEATURE IS CURRENTLY WORK IN PROGRESS -->
+
+<ul>
+	<% @posts.each do |post| %>
+		<% if posts.present? %>
+			<li><%= link_to post.title, :action => 'show' %>
+		<% else %>
+  		<div class="alert alert-info">
+    		<p>There are no posts containing the term(s) <%= params[:search] %>.</p>
+   	</div>
+  	<% end %>	
+	<% end %>
+</ul

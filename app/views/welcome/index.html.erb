@@ -1,0 +1,10 @@
+<h1>Current Posts</h1>
+<%= link_to "New Post", new_post_path, class: "btn btn-info" %>
+
+<% @posts.each do |post| %>
+
+<div class = "well">
+	<h3><%= link_to post.title %></h3>
+	<p><strong>Posted by <%= post.author_id %></p>
+</div>
+<% end %>
