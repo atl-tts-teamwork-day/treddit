@@ -10,11 +10,10 @@ Rails.application.routes.draw do
 
   get 'sign_up' => 'users#new'
   get 'comments' => 'comments#show'
-  get 'index' => 'welcome#index'
   get 'show_user' => 'users#show'
   get 'search' => 'posts#search'
-  get 'search' => 'posts#_search_result'
   get 'show_post' => 'posts#show'
+  get 'new_post' => 'posts#new'
   root 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
