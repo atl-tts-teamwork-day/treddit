@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'search' => 'posts#search'
   get 'show_post' => 'posts#show'
   get 'new_post' => 'posts#new'
+  
   root 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
